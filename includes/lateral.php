@@ -2,6 +2,8 @@
 
 <!-- Barra Lateral -->
 <aside id="sidebar">
+    
+
     <div id="login" class="bloque">
         <h3>Identificate</h3>
         <form action="login.php" method="post">

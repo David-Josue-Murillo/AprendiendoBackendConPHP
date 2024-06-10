@@ -11,7 +11,7 @@ if(isset($_POST['submit'])){
     // Validar formulario
     $nombre = $_POST['nombre']      ? mysqli_real_escape_string($db, $_POST['nombre'])      : false;
     $apellido = $_POST['apellido']  ? mysqli_real_escape_string($db, $_POST['apellido'])    : false;
-    $email = $_POST['email']        ? mysqli_real_escape_string($db, $_POST['email'])       : false;
+    $email = $_POST['email']        ? mysqli_real_escape_string($db, trim($_POST['email']))       : false;
     $password = $_POST['password']  ? mysqli_real_escape_string($db, $_POST['password'])    : false;
 
     $errores = array();
