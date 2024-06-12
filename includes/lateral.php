@@ -6,6 +6,12 @@
     <?php if (isset($_SESSION)) : ?>
         <div id="usuario-logueado" class="bloque">
             <h3> Bienvenido, <?= $_SESSION['$usuario']['nombre'] . ' ' . $_SESSION['$usuario']['apellidos'] ?></h3>
+            <!-- Botones -->
+            <a href="../index.php" class="boton boton-verde">Crear entradas</a>
+            <a href="../index.php" class="boton">Crear categoria</a>
+            <a href="../index.php" class="boton boton-naranja">Mis datos</a>
+            <a href="../index.php" class="boton boton-rojo">Cerrar sessión</a>
+
         </div>
     <?php endif; ?>
 
