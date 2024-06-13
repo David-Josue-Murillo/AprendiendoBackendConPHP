@@ -1,4 +1,3 @@
-<?php require_once 'includes/helpers.php'; ?>
 
 <!-- Barra Lateral -->
 <aside id="sidebar">

@@ -1,3 +1,4 @@
+<?php require_once 'includes/helpers.php'; ?>
 <?php require_once 'includes/conexion.php'; ?>
 
 <!DOCTYPE html>
@@ -25,17 +26,16 @@
                 <li>
                     <a href="#">Inicio</a>
                 </li>
+
+                <?php
+                    $categorias = conseguirCategorias($db);
+                    while($categoria = mysqli_fetch_assoc($categorias)) :
+                ?>
                 <li>
-                    <a href="#">Categoría 1</a>
+                    <a href="categoria.php?id=<?= $categoria['id'] ?>"><?= $categoria['nombre'] ?></a>
                 </li>
-                <li>
-                    <a href="#">Categoría 2</a>
-                </li>
-                <li>
-                    <a href="#">Categoría 3</a>
-                </li>
-                <li>
-                    <a href="#">Categoría 4</a>
+                <?php endwhile; ?>
+
                 <li>
                     <a href="#">Sobre mí</a>
                 </li>
