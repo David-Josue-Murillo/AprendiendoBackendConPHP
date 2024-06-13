@@ -7,26 +7,21 @@
             <div id="principal">
                 <h1>Ultimas entradas</h1>
 
-                <article class="entrada">
-                    <h2>Título de la entrada</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In unde eos sed explicabo quisquam ut natus animi voluptatibus expedita accusamus.</p>
-                </article>
+                <?php 
+                    $entradas = conseguirUltimasEntradas($db);
+                    if(!empty($entradas)):
+                        while($entrada = mysqli_fetch_assoc($entradas)) : 
+                ?>
 
                 <article class="entrada">
-                    <h2>Título de la entrada</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In unde eos sed explicabo quisquam ut natus animi voluptatibus expedita accusamus.</p>
+                    <a href="">
+                        <h2><?= $entrada['titulo']  ?></h2>
+                        <p><?= substr($entrada['descripcion'], 0, 200)."..."  ?></p>
+                    </a>
                 </article>
 
-                <article class="entrada">
-                    <h2>Título de la entrada</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In unde eos sed explicabo quisquam ut natus animi voluptatibus expedita accusamus.</p>
-                </article>
+                <?php endwhile; endif; ?>
 
-                <article class="entrada">
-                    <h2>Título de la entrada</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In unde eos sed explicabo quisquam ut natus animi voluptatibus expedita accusamus.</p>
-                </article>
-           
                 <div id="ver-todas">
                     <a href="#">Ver todas las entradas</a>
                 </div>
